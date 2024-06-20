@@ -25,8 +25,8 @@ public class Main {
         }
     }
 
-
-    public static void getSecureRandomHash(byte[] message, String algorithm) throws NoSuchAlgorithmException {
+    public static void getSecureRandomHash(byte[] message, String algorithm)
+            throws NoSuchAlgorithmException {
         SecureRandom secureRandom = SecureRandom.getInstance(algorithm);
         secureRandom.setSeed(1308);
         secureRandom.nextBytes(message);
@@ -34,8 +34,8 @@ public class Main {
         System.out.println(hash);
     }
 
-
-    private static void getMessageDigestHash(byte[] message, String algorithm) throws NoSuchAlgorithmException {
+    private static void getMessageDigestHash(byte[] message, String algorithm)
+            throws NoSuchAlgorithmException {
         MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
         messageDigest.update(message);
         String hash = convertToHex(messageDigest.digest());
@@ -53,6 +53,4 @@ public class Main {
         }
         return hexString.toString();
     }
-
-
 }
