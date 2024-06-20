@@ -20,13 +20,13 @@ jobs:
           distribution: 'temurin'
 
       - name: Analyze code style
-        run: ./gradlew checkstyleMain
+        run: gradle checkstyleMain
 
       - name: Build project
-        run: ./gradlew build
+        run: gradle build
 
       - name: Package as JAR
-        run: ./gradlew jar
+        run: gradle jar
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v2
